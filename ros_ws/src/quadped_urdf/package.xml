@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd"
+            schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>quadped_urdf</name>
+  <version>0.0.0</version>
+  <description>URDF and model configuration for quadruped robot</description>
+
+  <maintainer email="todo@todo.com">author</maintainer>
+  <license>TODO: License declaration</license>
+
+  <!-- Runtime dependencies -->
+  <depend>xacro</depend>
+  <depend>robot_state_publisher</depend>
+  <depend>joint_state_publisher</depend>
+  <depend>joint_state_publisher_gui</depend>
+  <depend>rviz2</depend>
+  <depend>gazebo_ros</depend> <!-- If you use Gazebo Classic -->
+  <depend>ros_gz_sim</depend> <!-- If you use Ignition Gazebo (Gazebo Harmonic) -->
+
+  <!-- Build system -->
+  <buildtool_depend>ament_python</buildtool_depend>
+
+  <!-- Testing dependencies -->
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+  <test_depend>python3-pytest</test_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

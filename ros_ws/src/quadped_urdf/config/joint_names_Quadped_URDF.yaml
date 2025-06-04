@@ -1,0 +1,1 @@
+controller_joint_names: ['', 'fixed_fe_joint1', 'fe_upper_1', 'upper_lower1', 'fixed_fe2', 'fe_upper2', 'upper_lower2', 'fixed_fe3', 'fe_upper3', 'upper_lower3', 'fixed_fe4', 'fe_upper4', 'upper_lower4', ]

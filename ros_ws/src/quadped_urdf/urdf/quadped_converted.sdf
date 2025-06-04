@@ -1,0 +1,676 @@
+<sdf version='1.11'>
+  <model name='quadped_urdf'>
+    <link name='base_link'>
+      <inertial>
+        <pose>0.000199869485857869 0.00055661900215108395 0.0046996349681528403 0 0 0</pose>
+        <mass>0.670811138520923</mass>
+        <inertia>
+          <ixx>0.00037561866341643201</ixx>
+          <ixy>2.4231790940246499e-08</ixy>
+          <ixz>4.3310048421824696e-06</ixz>
+          <iyy>0.00083860903670827404</iyy>
+          <iyz>5.4786347931249105e-07</iyz>
+          <izz>0.00062454230871855903</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quadped_urdf/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quadped_urdf/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.941176474 0.941176474 0.941176474 1</diffuse>
+          <ambient>0.941176474 0.941176474 0.941176474 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='fixed_fe2' type='revolute'>
+      <pose relative_to='base_link'>0.087499999999999994 0 -0.015049999999999999 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>fe_2</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='fe_2'>
+      <pose relative_to='fixed_fe2'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.00013378366327192201 -4.7731837697510298e-05 -0.120628370705068 0 0 0</pose>
+        <mass>0.041086968007575303</mass>
+        <inertia>
+          <ixx>0.000115311606588616</ixx>
+          <ixy>-1.29680490679935e-08</ixy>
+          <ixz>-2.0797771688449699e-07</ixz>
+          <iyy>0.00011087813235385</iyy>
+          <iyz>1.2538731143563601e-07</iyz>
+          <izz>8.6069382582992798e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='fe_2_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quadped_urdf/meshes/fe_2.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='fe_2_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quadped_urdf/meshes/fe_2.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.583333313 0.916666687 1 1</diffuse>
+          <ambient>0.583333313 0.916666687 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='fe_upper2' type='revolute'>
+      <pose relative_to='fe_2'>0.014 0 -0.1794 3.14159265358979 -1.5707963267948966 0</pose>
+      <parent>fe_2</parent>
+      <child>upper_2</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='upper_2'>
+      <pose relative_to='fe_upper2'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.058990975992740897 -0.058503883168517498 -0.021121080791060402 0 0 0</pose>
+        <mass>0.044654224576880702</mass>
+        <inertia>
+          <ixx>7.98280498328104e-05</ixx>
+          <ixy>6.9546521120978795e-05</ixy>
+          <ixz>7.1532103850981002e-06</ixz>
+          <iyy>8.06879995257044e-05</iyy>
+          <iyz>-7.1106431115422903e-06</iyz>
+          <izz>0.00015285782891943901</izz>
+        </inertia>
+      </inertial>
+      <collision name='upper_2_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quadped_urdf/meshes/upper_2.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='upper_2_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quadped_urdf/meshes/upper_2.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.774509847 1 1 1</diffuse>
+          <ambient>0.774509847 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='upper_lower2' type='revolute'>
+      <pose relative_to='upper_2'>0.113550017656808 -0.11272263975711 -0.037449999898726202 -3.14159265358979 0 -3.14159265358979</pose>
+      <parent>upper_2</parent>
+      <child>lower_2</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='lower_2'>
+      <pose relative_to='upper_lower2'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.0488250783006519 -0.047623267842999403 0.0071128841414104197 0 0 0</pose>
+        <mass>0.0342018770763651</mass>
+        <inertia>
+          <ixx>5.03484849740801e-05</ixx>
+          <ixy>4.9981165285297698e-05</ixy>
+          <ixz>-1.39835266732097e-06</ixz>
+          <iyy>5.2839993128287297e-05</iyy>
+          <iyz>1.3639344975702701e-06</iyz>
+          <izz>0.000102339921207292</izz>
+        </inertia>
+      </inertial>
+      <collision name='lower_2_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quadped_urdf/meshes/lower_2.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='lower_2_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quadped_urdf/meshes/lower_2.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.583333313 0.916666687 1 1</diffuse>
+          <ambient>0.583333313 0.916666687 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='fixed_fe3' type='revolute'>
+      <pose relative_to='base_link'>-0.087499999999999994 0 0.0150499999999999 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>fe_3</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='fe_3'>
+      <pose relative_to='fixed_fe3'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-0.00013378434377389601 -4.7730648839221397e-05 0.120628370198019 0 0 0</pose>
+        <mass>0.041086972217531902</mass>
+        <inertia>
+          <ixx>0.00011531160729402</ixx>
+          <ixy>1.2968394200551599e-08</ixy>
+          <ixz>-2.0797785233638699e-07</ixz>
+          <iyy>0.000110878131679831</iyy>
+          <iyz>-1.2538706892328001e-07</iyz>
+          <izz>8.6069380669411692e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='fe_3_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quadped_urdf/meshes/fe_3.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='fe_3_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quadped_urdf/meshes/fe_3.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.583333313 0.916666687 1 1</diffuse>
+          <ambient>0.583333313 0.916666687 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='fe_upper3' type='revolute'>
+      <pose relative_to='fe_3'>-0.014 0 0.1794 3.14159265358979 -1.5707963267948966 0</pose>
+      <parent>fe_3</parent>
+      <child>upper_3</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='upper_3'>
+      <pose relative_to='fe_upper3'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-0.0604981268118873 -0.056942910656510602 0.021120986966397699 0 0 0</pose>
+        <mass>0.044654634877363403</mass>
+        <inertia>
+          <ixx>7.6197788378422606e-05</ixx>
+          <ixy>-6.9429260868627795e-05</ixy>
+          <ixz>7.3364716123342196e-06</ixz>
+          <iyy>8.43186953376684e-05</iyy>
+          <iyz>6.9214219260139299e-06</iyz>
+          <izz>0.00015285788792090599</izz>
+        </inertia>
+      </inertial>
+      <collision name='upper_3_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quadped_urdf/meshes/upper_3.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='upper_3_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quadped_urdf/meshes/upper_3.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.774509847 1 1 1</diffuse>
+          <ambient>0.774509847 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='upper_lower3' type='revolute'>
+      <pose relative_to='upper_3'>-0.116454958715717 -0.109718925397384 0.037449999998215897 3.14159265358979 0 -3.14159265358979</pose>
+      <parent>upper_3</parent>
+      <child>lower_3</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='lower_3'>
+      <pose relative_to='upper_lower3'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-0.044290075686769501 -0.051867650409500102 -0.0071128843483565197 0 0 0</pose>
+        <mass>0.034201877234989603</mass>
+        <inertia>
+          <ixx>5.94254807461177e-05</ixx>
+          <ixy>-4.93795547324207e-05</ixy>
+          <ixz>-1.26846981761219e-06</ixz>
+          <iyy>4.3762996831457702e-05</iyy>
+          <iyz>-1.48549381364917e-06</iyz>
+          <izz>0.00010233992076483499</izz>
+        </inertia>
+      </inertial>
+      <collision name='lower_3_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quadped_urdf/meshes/lower_3.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='lower_3_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quadped_urdf/meshes/lower_3.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.583333313 0.916666687 1 1</diffuse>
+          <ambient>0.583333313 0.916666687 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='fixed_fe4' type='revolute'>
+      <pose relative_to='base_link'>-0.087499999999999994 0 -0.029700000000000001 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>fe_4</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='fe_4'>
+      <pose relative_to='fixed_fe4'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-0.000133784244345653 4.7730775363616301e-05 -0.105878371015855 0 0 0</pose>
+        <mass>0.041086972820243303</mass>
+        <inertia>
+          <ixx>0.00011531160936540299</ixx>
+          <ixy>-1.2968432386891801e-08</ixy>
+          <ixz>2.07978100591953e-07</ixz>
+          <iyy>0.000110878134389651</iyy>
+          <iyz>-1.2538675770103401e-07</iyz>
+          <izz>8.6069388004146199e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='fe_4_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quadped_urdf/meshes/fe_4.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='fe_4_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quadped_urdf/meshes/fe_4.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.583333313 0.916666687 1 1</diffuse>
+          <ambient>0.583333313 0.916666687 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='fe_upper4' type='revolute'>
+      <pose relative_to='fe_4'>-0.014 0 -0.16464999999999999 3.14159265358979 -1.5707963267948966 0</pose>
+      <parent>fe_4</parent>
+      <child>upper_4</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='upper_4'>
+      <pose relative_to='fe_upper4'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.055918101015273197 -0.061446586975238603 0.0211209824502505 0 0 0</pose>
+        <mass>0.044654625431132203</mass>
+        <inertia>
+          <ixx>8.6645951958478701e-05</ixx>
+          <ixy>6.9253565215849001e-05</ixy>
+          <ixz>-6.7971455511833999e-06</ixz>
+          <iyy>7.3862777585806405e-05</iyy>
+          <iyz>7.4517667736344599e-06</iyz>
+          <izz>0.00015285786404489399</izz>
+        </inertia>
+      </inertial>
+      <collision name='upper_4_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quadped_urdf/meshes/upper_4.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='upper_4_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quadped_urdf/meshes/upper_4.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.774509847 1 1 1</diffuse>
+          <ambient>0.774509847 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='upper_lower4' type='revolute'>
+      <pose relative_to='upper_4'>0.107746216734634 -0.118282512568206 0.037450000001390399 3.14159265358979 0 -3.14159265358979</pose>
+      <parent>upper_4</parent>
+      <child>lower_4</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='lower_4'>
+      <pose relative_to='upper_lower4'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.0492622082174013 -0.047170952259612001 -0.0071128843286973904 0 0 0</pose>
+        <mass>0.034201877417952199</mass>
+        <inertia>
+          <ixx>4.9426758623046202e-05</ixx>
+          <ixy>4.9949683047390098e-05</ixy>
+          <ixz>1.4108738273923401e-06</ixz>
+          <iyy>5.3761719839913502e-05</iyy>
+          <iyz>-1.3509783468547999e-06</iyz>
+          <izz>0.000102339921625709</izz>
+        </inertia>
+      </inertial>
+      <collision name='lower_4_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quadped_urdf/meshes/lower_4.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='lower_4_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quadped_urdf/meshes/lower_4.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.583333313 0.916666687 1 1</diffuse>
+          <ambient>0.583333313 0.916666687 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='fixed_fe_joint1' type='revolute'>
+      <pose relative_to='base_link'>0.087499999999999994 0 0.02955 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>fe_1</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='fe_1'>
+      <pose relative_to='fixed_fe_joint1'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0.00013378434762230401 4.7733023507900499e-05 0.106028370145983 0 0 0</pose>
+        <mass>0.041086972240944201</mass>
+        <inertia>
+          <ixx>0.00011531160730975</ixx>
+          <ixy>1.29677045975409e-08</ixy>
+          <ixz>2.0797787101614701e-07</ixz>
+          <iyy>0.000110878132321103</iyy>
+          <iyz>1.2538757359027301e-07</iyz>
+          <izz>8.6069386805678401e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='fe_1_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quadped_urdf/meshes/fe_1.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='fe_1_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quadped_urdf/meshes/fe_1.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.583333313 0.916666687 1 1</diffuse>
+          <ambient>0.583333313 0.916666687 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='fe_upper_1' type='revolute'>
+      <pose relative_to='fe_1'>0.014 0 0.1648 3.14159265358979 -1.5707963267948966 0</pose>
+      <parent>fe_1</parent>
+      <child>upper_1</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='upper_1'>
+      <pose relative_to='fe_upper_1'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-0.059738408610517803 -0.057740048826346799 -0.021121071821071698 0 0 0</pose>
+        <mass>0.044654340673097599</mass>
+        <inertia>
+          <ixx>7.7745039277889394e-05</ixx>
+          <ixy>-6.9502559166646606e-05</ixy>
+          <ixz>-7.26036146442219e-06</ixz>
+          <iyy>8.2768872025167805e-05</iyy>
+          <iyz>-7.0012003131598399e-06</iyz>
+          <izz>0.00015285801774174001</izz>
+        </inertia>
+      </inertial>
+      <collision name='upper_1_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quadped_urdf/meshes/upper_1.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='upper_1_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quadped_urdf/meshes/upper_1.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.774509847 1 1 1</diffuse>
+          <ambient>0.774509847 1 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+    <joint name='upper_lower1' type='revolute'>
+      <pose relative_to='upper_1'>-0.115099296377973 -0.11114023572361401 -0.037449999892347999 3.14159265358979 0 3.14159265358979</pose>
+      <parent>upper_1</parent>
+      <child>lower_1</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='lower_1'>
+      <pose relative_to='upper_lower1'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>-0.045101574623022597 -0.051163578673887697 0.0071128841582115999 0 0 0</pose>
+        <mass>0.0342018777935593</mass>
+        <inertia>
+          <ixx>5.7866107770108902e-05</ixx>
+          <ixy>-4.9601738758448602e-05</ixy>
+          <ixz>1.2917130837338001e-06</ixz>
+          <iyy>4.5322371245269197e-05</iyy>
+          <iyz>1.46532747000408e-06</iyz>
+          <izz>0.000102339922101355</izz>
+        </inertia>
+      </inertial>
+      <collision name='lower_1_collision'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quadped_urdf/meshes/lower_1.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='lower_1_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://quadped_urdf/meshes/lower_1.STL</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.583333313 0.916666687 1 1</diffuse>
+          <ambient>0.583333313 0.916666687 1 1</ambient>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>

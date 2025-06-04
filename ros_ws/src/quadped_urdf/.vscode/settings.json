@@ -1,0 +1,14 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/myubuntuiitm/ros_ws/install/quadped_urdf/lib/python3.10/site-packages",
+        "/home/myubuntuiitm/ros_ws/install/quadped_desc/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/myubuntuiitm/ros_ws/install/quadped_urdf/lib/python3.10/site-packages",
+        "/home/myubuntuiitm/ros_ws/install/quadped_desc/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ]
+}
